@@ -10,7 +10,7 @@ public class ForLoop {
         //        for (초기식; 조건식; 증감식) {
         //            실행구문
         //        }
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {  // 이렇게 외우는게 나아
             System.out.print(i);
         }
         System.out.println("반복끝");
@@ -49,6 +49,14 @@ public class ForLoop {
         }
         System.out.println("반복끝");
 
+
+        // for문 밖에서 iterator를 참조해야만 한다면 아래처럼..
+        int i;
+        for (i=0; i<10; i++) {
+            // 실행코드
+        }
+        System.out.println("iterator의 최종값은?");
+        System.out.println(i);
 
     }
 }

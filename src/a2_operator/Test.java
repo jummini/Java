@@ -8,6 +8,7 @@ public class Test {
         System.out.println("11111");
 
 
+
         // 106p 연습 문제
         //Q1
         System.out.println(2 + 3 / 2);
@@ -53,6 +54,7 @@ public class Test {
         System.out.println((4 <= 4) || (6 < 3));
         System.out.println(false ^ ( 3 >= 4));
         System.out.println(!(3 <= 3));
+
 
 
     }

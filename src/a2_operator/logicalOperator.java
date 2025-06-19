@@ -31,10 +31,10 @@ public class logicalOperator {
         System.out.println();
 
         // XOR (exclusive OR 배아적논리함)
-        System.out.println(true ^ true);
-        System.out.println(true ^ false);
-        System.out.println(false ^ true);
-        System.out.println(false ^ false);
+        System.out.println(true ^ true); // false
+        System.out.println(true ^ false); // true
+        System.out.println(false ^ true); // true
+        System.out.println(false ^ false); // false
 
         // 실제 예시 1) NOT 연산자의 사용법
         //보통 토글장치를 구현할 때 사용함
