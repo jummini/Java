@@ -24,7 +24,7 @@ public class BreakContinue {
         }
         System.out.println();
         
-        // 지운 for문을 한번에 탈출하는 코드
+        // 이중 for문을 한번에 탈출하는 코드
         for (int i=0; i<3; i++) {
             for (int j=0; j<5; j++) {
                 if(j == 2){
