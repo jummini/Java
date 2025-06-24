@@ -26,7 +26,7 @@ public class Product {
         return this.price;
     }
     // 재고설정
-    public double setStock(int newStock) {
+    public int setStock(int newStock) {
         this.stock = newStock;
         return this.stock;
     }
