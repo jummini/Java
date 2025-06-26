@@ -37,7 +37,7 @@ public class Book {
     // 메서드 오버로딩(Overloading)이란?
     // 메서드의 이름을 동일하게 유지하면서 메서드 시그니처를 다르게 하여
     // 여러 다른 기능을 메서드가 수행하도록 하는 기법
-    // 메서드 시그니처 = 메서드이름, 매개변수 자료형, 배개변수의 갯수
+    // 메서드 시그니처 = 메서드이름, 매개변수 자료형, 매개변수의 갯수
     public void method1(int a, String b) {
     }
     public void method1(String c, int d) {
