@@ -1,5 +1,7 @@
 package a6_array;
 
+import java.util.Arrays;
+
 public class Matrix1 {
     public static void main(String[] args) {
         // 2차원 행렬 배열. 매트릭스, 2D Array
