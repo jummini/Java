@@ -14,7 +14,7 @@ public class Array3 {
         int[] ints = {1,2,3};
         int[] temp = ints;
         temp[0] = 100;
-        System.out.println("ints[0]=" + ints[0]);
-        System.out.println("temp[0]=" + temp[0]);
+        System.out.println("ints[0]=" + ints[0]); // ints[0]=100
+        System.out.println("temp[0]=" + temp[0]); // temp[0]=100
     }
 }
