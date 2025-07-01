@@ -25,22 +25,6 @@ public class Array1 {
         // 만약 array2의 크기를 6개로 늘리려면 새로 6개를 만들고 기존 배열은 삭제함
 
 
-        // 모든 자료형을 배열로 만들 수 있음(참조자료형 포함)
-        String[] array3 = new String[10];
-        Student[] students = new Student[100]; // Student 객체 100개를 생성
-        array3[0] = "첫번째";
-        array3[1] = "두번째";
-
-
-        System.out.println(Arrays.toString(array3));
-        // Student 클래스의 배열에 값을 저장하는 방법
-        students[0] = new Student("steve", 25, "대전", "남", 100, 100, 100);
-        students[0] = new Student("tom", 21, "서울", "남", 90, 80, 70);
-        students[0] = new Student("Laura", 20, "부산", "여", 100, 90, 80);
-        System.out.println(Arrays.toString(students));
-        // 클래스 안에 toString 메서드를 오버라이드해야만
-
-
         // 배열에 값을 대입하는 법
         array1[0] = 0; // 0번 인덱스(=0번 자리) index
         array1[1] = 10; // 1번 인덱스
@@ -57,5 +41,18 @@ public class Array1 {
         // boolean bool = false
         // int i = 0 (byte, short, int, long 모두 0)
         // double num = 0.0 (float, double 모두 0.0)
+
+        // 모든 자료형을 배열로 만들 수 있음(참조자료형 포함)
+        String[] array3 = new String[10];
+        Student[] students = new Student[5]; // Student 객체 100개를 생성
+        array3[0] = "첫번째";
+        array3[1] = "두번째";
+        System.out.println(Arrays.toString(array3));
+        // Student 클래스의 배열에 값을 저장하는 방법
+        students[0] = new Student("steve", 25, "대전", "남", 100, 100, 100);
+        students[1] = new Student("tom", 21, "서울", "남", 90, 80, 70);
+        students[2] = new Student("Laura", 20, "부산", "여", 100, 90, 80);
+        System.out.println(Arrays.toString(students));
+        // 클래스안에 toString 메서드를 오버라이드해야만 출력이 정상적으로 나옴.
     }
 }
