@@ -1,6 +1,7 @@
 package a9_inheritance.Inheritance;
 
 import java.util.Arrays;
+import java.util.List;
 
 /* 음악앨범을 관리하는 클래스
 요구사항:
@@ -13,22 +14,21 @@ import java.util.Arrays;
 각 필드의 getter/setter 메서드
 toString 오버라이딩 메서드
  */
-class Album{
+class Album {
     private String title;
     private int releaseYear;
-    private String[] tracks;
-
+    //    private String[] tracks;
+    private List<String> tracks;
 
 
     public Album() {
     }
 
-    public Album(String title, int releaseYear, String[] tracks) {
+    public Album(String title, int releaseYear, List<String> tracks) {
         this.title = title;
         this.releaseYear = releaseYear;
         this.tracks = tracks;
     }
-
 
 
     public String getTitle() {
@@ -47,11 +47,12 @@ class Album{
         this.releaseYear = releaseYear;
     }
 
-    public String[] getTracks() {
+    public List<String> getTracks() {
         return tracks;
     }
 
-    public void setTracks(String[] tracks) {
+
+    public void setTracks(List<String> tracks) {
         this.tracks = tracks;
     }
 
@@ -59,15 +60,17 @@ class Album{
     @Override
     public String toString() {
         return "Album{" +
-                "title='" + title + '\'' +
-                ", releaseYear=" + releaseYear +
-                ", tracks=" + Arrays.toString(tracks) +
+                "앨범제목='" + title + '\'' +
+                ", 발매연도=" + releaseYear +
+                ", 수록곡=" + tracks +
                 '}';
     }
 }
 
-public class Example2 {
-    public static void main(String[] args) {
 
+    public class Example2 {
+        public static void main(String[] args) {
+
+        }
     }
-}
+
