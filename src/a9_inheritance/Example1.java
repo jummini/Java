@@ -1,4 +1,4 @@
-package a9_inheritance.Inheritance;
+package a9_inheritance;
 
 /*
 학생의 정보와 성적을 관리하는 Student 클래스를 설계하세요.
@@ -11,17 +11,17 @@ package a9_inheritance.Inheritance;
 생성자(기본생성자, 모든 필드를 매개변수로 가지는 생성자)
 각 필드의 getter/setter 메소드
  */
-class student {
+class Student {
 
     private String studentId;
     private String name;
     private int grade;
 
 
-    public student() {
+    public Student() {
     }
 
-    public student(String studentId, String name, int grade) {
+    public Student(String studentId, String name, int grade) {
         this.studentId = studentId;
         this.name = name;
         this.grade = grade;
@@ -49,8 +49,19 @@ class student {
         return grade;
     }
 
+
+
+
+
     public void setGrade(int grade) {
-        this.grade = grade;
+        // 예외처리 (getter, setter를 사용하는 이유)
+        if (grade >= 1 && grade <= 6) {
+            this.grade = grade;
+        } else {
+            System.out.println("잘못된입력입니다. [1-6]");
+        }
+
+
     }
 
     @Override
@@ -65,10 +76,10 @@ class student {
 
 public class Example1 {
     public static void main(String[] args) {
-        student s1 = new student("steve123", "steve Jones", 1);
-        //s1.garde = 2; // 오류. grade가 private이므로  참조 불가
+        Student s1 = new Student("steve1234", "Steve Jones", 1);
+        //s1.grade = 2; // 오류 grade가 private이므로 참조 불가
         s1.setGrade(2);
-        System.out.println(s1); // Student{studentId='steve123', name='steve'}
+        System.out.println(s1); // Student{studentId='steve1234', name='Steve Jones', grade=2}
 
     }
 }

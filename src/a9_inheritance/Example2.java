@@ -1,6 +1,5 @@
-package a9_inheritance.Inheritance;
+package a9_inheritance;
 
-import java.util.Arrays;
 import java.util.List;
 
 /* 음악앨범을 관리하는 클래스

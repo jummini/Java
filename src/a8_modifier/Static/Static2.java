@@ -1,12 +1,14 @@
 package a8_modifier.Static;
 
 class B {
-    int a;
-    static int b;
+    int a; // 인스턴스 필드
+    static int b; // 정적 필드(=스태틱필드)
     static void method() {
         System.out.println("정적메서드");
-//        System.out.println(a); // 오류
+        //System.out.println(a); // 오류 (정적영역에는 a가 존재X)
         System.out.println(b); // 정상
+        // <중요> 정적메서드는 클래스내의 정적필드만 참조할 수 있음
+        // 클래스의 상태를 처리하는데는 적합하지 않음!!
     }
 }
 

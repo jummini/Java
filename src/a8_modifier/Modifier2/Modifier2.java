@@ -1,6 +1,7 @@
-package a8_modifier.Modifier2.pack;
+package a8_modifier.Modifier2;
 
 import a8_modifier.Modifier2.pack.AA;
+import a8_modifier.Modifier2.pack.CC;
 //import a8_modifier.Modifier2.pack.BB; // 오류(동일패키지가 아니므로 import 불가)
 
 
@@ -13,8 +14,7 @@ public class Modifier2 {
         // AA, BB, CC 클래스 인스턴스화(=객체화)
         // new 키워드로 클래스의 객체를 생성하는 것을 "인스턴스화"라고 함
         AA aa = new AA(); // 인스턴스화 가능
-//        BB bb = new BB(); // 인스턴스화 불가
-        CC cc = new CC();
+        // BB bb = new BB(); // 인스턴스화 불가
+        // CC cc = new CC(); // 인스턴스화 불가
     }
 }
-

@@ -1,5 +1,6 @@
 package a9_inheritance.Overriding;
 
+
 class A {
     int a = 5;
     void print() {
@@ -30,11 +31,3 @@ public class Overriding_1 {
         System.out.println(value4.a); // 10
     }
 }
-
-
-
-
-
-
-
-
