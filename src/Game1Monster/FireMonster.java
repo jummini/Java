@@ -7,16 +7,18 @@ public class FireMonster extends Monster {
 
     public FireMonster(String name, int hp, int attack, int defense, int fireskillDamage) {
         super(name, hp, attack, defense); // Monster의 생성자 호출
-        fireskillDamage = fireskillDamage;
+        this.fireskillDamage = fireskillDamage;
     }
-
 
     public int getFireskillDamage() {
         return fireskillDamage;
     }
 
-    public void setFireskillDamage(int fireskillDamage) {
-        this.fireskillDamage = fireskillDamage;
+
+    @Override
+    public int getAttack() {
+        // 원래 공격력 + 화염 스킬 데미지를 자동으로 포함
+        return super.getAttack() + fireskillDamage;
     }
 
 @Override

@@ -21,8 +21,8 @@ public class GameManager {
 
         // 화염 몬스터 추가
         monsters.add(new FireMonster("이프리트", 140, 22, 18, 35)); // 10 이프리트
-        monsters.add(new FireMonster("헬하운드", 90, 28, 10, 25)); // 헬하운드
-        monsters.add(new FireMonster("파이어 골렘", 180, 25, 22, 20)); // 파이어 콜렘
+        monsters.add(new FireMonster("헬하운드", 90, 28, 10, 25)); // 11 헬하운드
+        monsters.add(new FireMonster("파이어 골렘", 180, 25, 22, 20)); // 12 파이어 골렘
 
 
 
@@ -40,13 +40,27 @@ public class GameManager {
             System.out.println("같은 몬스터는 선택이 불가능합니다.");
         }
 
+
         Monster m1 = monsters.get(index1);
         Monster m2 = monsters.get(index2);
+
+
+        if (m1 instanceof FireMonster) {
+            FireMonster fm1 = (FireMonster) m1;
+            m1.setAttack(m1.getAttack() + fm1.getFireskillDamage());
+            System.out.println(m1.getName() + "의 화염 스킬이 발동되었다! +" + fm1.getFireskillDamage());
+        }
+        if (m2 instanceof FireMonster) {
+            FireMonster fm2 = (FireMonster) m2;
+            m2.setAttack(m2.getAttack() + fm2.getFireskillDamage());
+            System.out.println(m2.getName() + "의 화염 스킬이 발동되었다! +" + fm2.getFireskillDamage());
+        }
 
 
         // 전투 시작
         while (m1.getHp() > 0 && m2.getHp() > 0) { // 둘 다 살아있을때, 전투 반복함
             int damagem2 = m1.getAttack() - m2.getDefense(); // 오크의 피해량 = 슬라임공격 - 오크방어
+
             if (damagem2 < 0) { // 피해량이 적다고 체력을 회복하면 안 됨
                 damagem2 = 0;
             }
