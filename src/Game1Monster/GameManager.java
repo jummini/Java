@@ -13,7 +13,7 @@ public class GameManager {
         monsters.add(new NormalMonster("고블린", 50, 12, 4)); // 1 고블린
         monsters.add(new NormalMonster("오크", 80, 15, 7)); // 2 오크
         monsters.add(new NormalMonster("스켈레톤", 60, 14, 10)); // 3 스켈레톤
-        monsters.add(new NormalMonster("트롤", 120, 18, 6)); // 4 트롤
+        monsters.add(new Troll("트롤", 120, 18, 6)); // 4 트롤
         monsters.add(new NormalMonster("골렘", 100, 20, 25)); // 5 골렘
         monsters.add(new NormalMonster("와이번", 150, 25, 15)); // 6 와이번
         monsters.add(new NormalMonster("리치", 130, 35, 12)); // 7 리치
@@ -22,7 +22,7 @@ public class GameManager {
 
         // 화염 몬스터 추가
         monsters.add(new FireMonster("이프리트", 140, 22, 18, 35)); // 10 이프리트
-        monsters.add(new FireMonster("헬하운드", 90, 28, 10, 25)); // 11 헬하운드
+        monsters.add(new Hellhound("헬하운드", 90, 28, 10, 25)); // 11 헬하운드
         monsters.add(new FireMonster("파이어 골렘", 180, 25, 22, 20)); // 12 파이어 골렘
 
 
@@ -65,10 +65,16 @@ public class GameManager {
             if (damagem2 < 0) { // 피해량이 적다고 체력을 회복하면 안 됨
                 damagem2 = 0;
             }
+
             int newHpoak = m2.getHp() - damagem2; // 오크의 새로운 체력이 생김 = 오크 체력 - 피해량
             m2.setHp(newHpoak); // 새로운 체력
             System.out.println(m1.getName() + "이(가) " + m2.getName() + "을(를) 공격했다! 데미지: " + damagem2);
             System.out.println(m2.getName() + "의 남은 체력: " + m2.getHp());
+
+            if (m1 instanceof Healable && Math.random() < 0.25) {
+                ((Healable)m1).heal();
+            }
+
 
             try { // 1000 밀리초 = 1초 동안 실행을 멈춥니다.
                 Thread.sleep(1000);
@@ -88,10 +94,15 @@ public class GameManager {
             if (damagem1 < 0) {
                 damagem1 = 0;
             }
+
             int newHpslime = m1.getHp() - damagem1;
             m1.setHp(newHpslime);
             System.out.println(m2.getName() + "이(가) " + m1.getName() + "을(를) 공격했다! 데미지: " + damagem1);
             System.out.println(m1.getName() + "의 남은 체력: "+ m1.getHp());
+
+            if (m2 instanceof Healable && Math.random() < 0.25) {
+                ((Healable) m2).heal();
+            }
 
             try {// 1000 밀리초 = 1초 동안 실행을 멈춥니다.
                 Thread.sleep(1000);
