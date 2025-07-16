@@ -14,3 +14,5 @@ public class Interface_6 {
         S.abc(); // 정적메서드이므로 인스턴스를 만들 필요없이 사용 가능
     }
 }
+
+

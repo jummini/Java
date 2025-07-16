@@ -1,6 +1,6 @@
 package Game1Monster;
 
-public class Monster {
+public abstract class Monster {
         private String name; // 이름
         private int hp; // 체력
         private int maxHp; // 최대 체력
@@ -43,6 +43,8 @@ public class Monster {
             this.hp = hp;
         }
     }
+
+    public abstract int attack(Monster target);  // 이게 있어야 오류가 안 남
     public int getMaxHp() {
         return maxHp;
     }

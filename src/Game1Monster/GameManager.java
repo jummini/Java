@@ -3,21 +3,22 @@ package Game1Monster;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import Game1Monster.NormalMonster;
 
 public class GameManager {
     public static void main(String[] args) {
         List<Monster> monsters = new ArrayList<>();
         // 기본 몬스터
-        monsters.add(new Monster("슬라임", 30, 8, 5)); // 0 슬라임
-        monsters.add(new Monster("고블린", 50, 12, 4)); // 1 고블린
-        monsters.add(new Monster("오크", 80, 15, 7)); // 2 오크
-        monsters.add(new Monster("스켈레톤", 60, 14, 10)); // 3 스켈레톤
-        monsters.add(new Monster("트롤", 120, 18, 6)); // 4 트롤
-        monsters.add(new Monster("골렘", 100, 20, 25)); // 5 골렘
-        monsters.add(new Monster("와이번", 150, 25, 15)); // 6 와이번
-        monsters.add(new Monster("리치", 130, 35, 12)); // 7 리치
-        monsters.add(new Monster("키메라", 200, 30, 20)); // 8 키메라
-        monsters.add(new Monster("드래곤", 300, 40, 30)); // 9 드래곤
+        monsters.add(new NormalMonster("슬라임", 30, 8, 5)); // 0 슬라임
+        monsters.add(new NormalMonster("고블린", 50, 12, 4)); // 1 고블린
+        monsters.add(new NormalMonster("오크", 80, 15, 7)); // 2 오크
+        monsters.add(new NormalMonster("스켈레톤", 60, 14, 10)); // 3 스켈레톤
+        monsters.add(new NormalMonster("트롤", 120, 18, 6)); // 4 트롤
+        monsters.add(new NormalMonster("골렘", 100, 20, 25)); // 5 골렘
+        monsters.add(new NormalMonster("와이번", 150, 25, 15)); // 6 와이번
+        monsters.add(new NormalMonster("리치", 130, 35, 12)); // 7 리치
+        monsters.add(new NormalMonster("키메라", 200, 30, 20)); // 8 키메라
+        monsters.add(new NormalMonster("드래곤", 300, 40, 30)); // 9 드래곤
 
         // 화염 몬스터 추가
         monsters.add(new FireMonster("이프리트", 140, 22, 18, 35)); // 10 이프리트
@@ -29,12 +30,12 @@ public class GameManager {
 
         // 전투 몬스터 선택. m1의 선공
         Scanner scanner = new Scanner(System.in);
-        System.out.println("선공 몬스터의 번호를 입력하세요: "); // 첫번째 몬스터 입력받기
+        System.out.println("선공 몬스터 번호: "); // 첫번째 몬스터 입력받기
         int index1 = scanner.nextInt();
 
         int index2;
         while (true) { // 두 몬스터는 같을 수 없다는 전제깔기
-            System.out.println("후공 몬스터의 번호를 입력하세요: "); // 두번째 몬스터 입력받기
+            System.out.println("후공 몬스터 번호: "); // 두번째 몬스터 입력받기
             index2 = scanner.nextInt();
             if (index2 != index1) break; // 같으면 break
             System.out.println("같은 몬스터는 선택이 불가능합니다.");
@@ -48,12 +49,12 @@ public class GameManager {
         if (m1 instanceof FireMonster) {
             FireMonster fm1 = (FireMonster) m1;
             m1.setAttack(m1.getAttack() + fm1.getFireskillDamage());
-            System.out.println(m1.getName() + "의 화염 스킬이 발동되었다! +" + fm1.getFireskillDamage());
+            System.out.println(m1.getName() + "의 화염 스킬 발동! 추가 데미지 +" + fm1.getFireskillDamage());
         }
         if (m2 instanceof FireMonster) {
             FireMonster fm2 = (FireMonster) m2;
             m2.setAttack(m2.getAttack() + fm2.getFireskillDamage());
-            System.out.println(m2.getName() + "의 화염 스킬이 발동되었다! +" + fm2.getFireskillDamage());
+            System.out.println(m2.getName() + "의 화염 스킬 발동! 추가 데미지 +" + fm2.getFireskillDamage());
         }
 
 
@@ -69,8 +70,7 @@ public class GameManager {
             System.out.println(m1.getName() + "이(가) " + m2.getName() + "을(를) 공격했다! 데미지: " + damagem2);
             System.out.println(m2.getName() + "의 남은 체력: " + m2.getHp());
 
-            try {
-                // 1000 밀리초 = 1초 동안 실행을 멈춥니다.
+            try { // 1000 밀리초 = 1초 동안 실행을 멈춥니다.
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 // sleep 도중 방해를 받았을 때 처리할 코드를 여기에 작성할 수 있습니다.
@@ -93,8 +93,7 @@ public class GameManager {
             System.out.println(m2.getName() + "이(가) " + m1.getName() + "을(를) 공격했다! 데미지: " + damagem1);
             System.out.println(m1.getName() + "의 남은 체력: "+ m1.getHp());
 
-            try {
-                // 1000 밀리초 = 1초 동안 실행을 멈춥니다.
+            try {// 1000 밀리초 = 1초 동안 실행을 멈춥니다.
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 // sleep 도중 방해를 받았을 때 처리할 코드를 여기에 작성할 수 있습니다.
